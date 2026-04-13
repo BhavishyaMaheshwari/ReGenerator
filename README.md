@@ -1,5 +1,7 @@
 # ReGenerator
 
+#### Deployed link - https://bhavishyamaheshwari.github.io/ReGenerator/
+
 **TAFL Project - Bhavishya Maheshwari (2024UCA1884)**
 
 Problem statement: 
