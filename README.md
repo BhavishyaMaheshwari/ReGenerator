@@ -1,6 +1,6 @@
 # ReGenerator
 
-**TAFL Project by - Bhavishya Maheshwari (2024UCA1884)**
+**TAFL Project - Bhavishya Maheshwari (2024UCA1884)**
 
 Problem statement: 
 
