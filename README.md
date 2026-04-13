@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# ReGenerator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**ReGenerator** is an interactive, visual playground for exploring Regular Expressions and Automata Theory. By bridging the gap between raw regular expressions and their underlying mathematical constructs, this tool allows students, educators, and developers to visualize how a computer strictly understands pattern matching.
 
-Currently, two official plugins are available:
+It provides a rich set of features that compile down regex strings into navigable graphs in real time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Automata Visualization:** Type any standard regular expression and instantly view its mathematical graph representation. The tool compiles your regex and constructs the corresponding State Automata.
+- **Mathematical Compilation Pipeline:**
+  - **Regex to NFA** via *Thompson's Construction Algorithm*
+  - **NFA to DFA** via *Subset / Powerset Construction*
+  - **DFA Minimization** via *Hopcroft's Algorithm*
+- **Interactive UI:** Hover over the nodes (states) of the graph to get an overlay of outgoing transitions, whether it is a start, accept, or intermediary state.
+- **String Tester:** Evaluate test strings against your provided regex expression in real-time.
+- **String Generator:** Automatically generate examples of random strings that are guaranteed to be accepted by the language defined in your regular expression.
+- **Equivalence Checker:** Input two different regular expressions and the application will formally verify if they describe the exact same mathematical language. If they don't, it will attempt to provide a counterexample string!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- **React & TypeScript:** Core component architecture and interface
+- **Vite:** Blazing fast frontend build tooling
+- **D3.js:** Force-directed graph simulation and dynamic SVG path rendering
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Follow these steps to run the application locally on your machine:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/BhavishyaMaheshwari/ReGenerator.git
+   cd ReGenerator
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install dependencies:**
+   Make sure you have [Node.js](https://nodejs.org/) installed, and then run:
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. **View the app:**
+   Open your browser and navigate to the local URL provided in the terminal (typically `http://localhost:5173/`).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📜 License
+
+This project is built for educational context. Feel free to use and modify it!
